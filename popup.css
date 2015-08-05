@@ -1,0 +1,28 @@
+*{
+	box-sizing: border-box;
+}
+
+.title{
+	font-size: 1.2rem;
+	color: black;
+}
+
+.hidden{
+	display: none;
+}
+
+.btn{
+	background-color: #F2C71F;
+	color: white;
+	padding: .5rem 1rem;
+	cursor: pointer;
+	border-radius: 3px;
+	border: 3px solid transparent;
+	transition: border 300ms ease-out;
+}
+
+.btn:focus{
+	outline: 0;
+	border: 3px solid #B39317;
+}
+

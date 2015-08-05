@@ -1,0 +1,20 @@
+.spooky-ghost-modal{
+	position: absolute;
+	width: 100vw;
+	top: 0;
+	left: 0;
+	z-index: 100000;
+	background-color: rgba(0,0,0,.2);
+	pointer-events: none;
+}
+
+.spooky-ghost-image{
+	position: absolute;
+	max-width: 200px;
+	max-height: 200px;
+}
+
+.spooky-ghost-active{
+	top: 0;
+	left: 0;
+}
