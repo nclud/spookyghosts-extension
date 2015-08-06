@@ -18,6 +18,7 @@ var init = function(){
 
 		if (response.spookyGhostStarted){
 			$('.list').removeClass('hidden');
+			$('.go-btn').text('Hide Ghosts');
 			sendMessage( { showGhosts: true } );
 		}
 
@@ -41,9 +42,15 @@ $(function() {
 		list.toggleClass('hidden');
 		sendMessage( { showGhosts: !list.hasClass('hidden') } );
 
+		list.hasClass('hidden') ? $(this).text('Show Ghosts') : $(this).text('Hide Ghosts');
+
 		chrome.storage.sync.set({'spookyGhostStarted': !list.hasClass('hidden')}, function() {
           // Notify that we saved.
           message('Settings saved');
         });
-	})
+	});
+
+	window.setTimeout(function(){
+		$('.go-btn').blur();
+	}, 100);
 });
