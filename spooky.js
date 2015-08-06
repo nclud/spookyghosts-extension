@@ -96,6 +96,7 @@ function moveGhost(ghost, newGhost){
 	
 	var date = Date.now();
 	var max = newGhost ? 0 : Math.PI * 2;
+	var maxSway = random(5, 10);
 	var randX = random(0, max);
 	var randY = random(0, max);
 	var magnitude = random(5, 20);
@@ -107,8 +108,10 @@ function moveGhost(ghost, newGhost){
 		var deltaX = magnitude * Math.sin(deltaTime / timeMagnitude + randX);
 		var deltaY = magnitude * Math.sin(deltaTime / timeMagnitude + randY);
 
+		var sway = maxSway * Math.sin(deltaTime / timeMagnitude + randX);
+
 		ghost.css({
-			transform: "translate3d(" + deltaX + "px, " + deltaY + "px, 0)"
+			transform: "translate3d(" + deltaX + "px, " + deltaY + "px, 0) rotate(" + sway + "deg)"
 		})
 
 		window.requestAnimationFrame(animate);
